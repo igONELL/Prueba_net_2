@@ -16,5 +16,6 @@ namespace Prueba_net_2.Vista
         {
             InitializeComponent();
         }
+
     }
 }

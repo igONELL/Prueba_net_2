@@ -42,6 +42,10 @@
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalPedido = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.regToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +66,7 @@
             this.checkPizzaIndividual.TabIndex = 1;
             this.checkPizzaIndividual.Text = "Individual $8.000";
             this.checkPizzaIndividual.UseVisualStyleBackColor = true;
+            this.checkPizzaIndividual.CheckedChanged += new System.EventHandler(this.checkPizzaIndividual_CheckedChanged);
             // 
             // checkPizzaMediana
             // 
@@ -72,6 +77,7 @@
             this.checkPizzaMediana.TabIndex = 2;
             this.checkPizzaMediana.Text = "Mediana $12.000";
             this.checkPizzaMediana.UseVisualStyleBackColor = true;
+            this.checkPizzaMediana.CheckedChanged += new System.EventHandler(this.checkPizzaMediana_CheckedChanged);
             // 
             // checkPizzaFamiliar
             // 
@@ -82,11 +88,12 @@
             this.checkPizzaFamiliar.TabIndex = 3;
             this.checkPizzaFamiliar.Text = "Familiar $ 22.000";
             this.checkPizzaFamiliar.UseVisualStyleBackColor = true;
+            this.checkPizzaFamiliar.CheckedChanged += new System.EventHandler(this.checkPizzaFamiliar_CheckedChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(239, 254);
+            this.label2.Location = new System.Drawing.Point(238, 254);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 4;
@@ -95,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(239, 213);
+            this.label3.Location = new System.Drawing.Point(238, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 5;
@@ -104,7 +111,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(605, 213);
+            this.label4.Location = new System.Drawing.Point(604, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 6;
@@ -113,7 +120,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(605, 253);
+            this.label5.Location = new System.Drawing.Point(604, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 7;
@@ -128,6 +135,7 @@
             this.checkBebidaIndividual.TabIndex = 8;
             this.checkBebidaIndividual.Text = "Individual $1.500";
             this.checkBebidaIndividual.UseVisualStyleBackColor = true;
+            this.checkBebidaIndividual.CheckedChanged += new System.EventHandler(this.checkBebidaIndividual_CheckedChanged);
             // 
             // checkBebidaFamiliar
             // 
@@ -138,29 +146,31 @@
             this.checkBebidaFamiliar.TabIndex = 9;
             this.checkBebidaFamiliar.Text = "Familiar $5.000";
             this.checkBebidaFamiliar.UseVisualStyleBackColor = true;
+            this.checkBebidaFamiliar.CheckedChanged += new System.EventHandler(this.checkBebidaFamiliar_CheckedChanged);
             // 
             // btnAgregarPedido
             // 
-            this.btnAgregarPedido.Location = new System.Drawing.Point(243, 532);
+            this.btnAgregarPedido.Location = new System.Drawing.Point(240, 532);
             this.btnAgregarPedido.Name = "btnAgregarPedido";
-            this.btnAgregarPedido.Size = new System.Drawing.Size(158, 50);
-            this.btnAgregarPedido.TabIndex = 10;
+            this.btnAgregarPedido.Size = new System.Drawing.Size(157, 49);
+            this.btnAgregarPedido.TabIndex = 14;
             this.btnAgregarPedido.Text = "Agregar Pedido";
-            this.btnAgregarPedido.UseVisualStyleBackColor = true;
+            this.btnAgregarPedido.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // btnCerrarCaja
             // 
             this.btnCerrarCaja.Location = new System.Drawing.Point(609, 532);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(158, 50);
+            this.btnCerrarCaja.Size = new System.Drawing.Size(158, 49);
             this.btnCerrarCaja.TabIndex = 11;
             this.btnCerrarCaja.Text = "Cerrar Caja";
             this.btnCerrarCaja.UseVisualStyleBackColor = true;
+            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(176, 653);
+            this.label6.Location = new System.Drawing.Point(176, 652);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 20);
             this.label6.TabIndex = 12;
@@ -169,10 +179,38 @@
             // lblTotalPedido
             // 
             this.lblTotalPedido.AutoSize = true;
-            this.lblTotalPedido.Location = new System.Drawing.Point(235, 652);
+            this.lblTotalPedido.Location = new System.Drawing.Point(236, 652);
             this.lblTotalPedido.Name = "lblTotalPedido";
-            this.lblTotalPedido.Size = new System.Drawing.Size(0, 20);
+            this.lblTotalPedido.Size = new System.Drawing.Size(18, 20);
             this.lblTotalPedido.TabIndex = 13;
+            this.lblTotalPedido.Text = "0";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1002, 33);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // regToolStripMenuItem
+            // 
+            this.regToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroToolStripMenuItem});
+            this.regToolStripMenuItem.Name = "regToolStripMenuItem";
+            this.regToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
+            this.regToolStripMenuItem.Text = "Opciones";
+            // 
+            // registroToolStripMenuItem
+            // 
+            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(179, 34);
+            this.registroToolStripMenuItem.Text = "Registro";
+            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -193,8 +231,12 @@
             this.Controls.Add(this.checkPizzaMediana);
             this.Controls.Add(this.checkPizzaIndividual);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +258,8 @@
         private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotalPedido;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem regToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
     }
 }

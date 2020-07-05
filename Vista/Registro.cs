@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prueba_net_2.Vista
+namespace Prueba_net_2_.Vista
 {
     public partial class Registro : Form
     {
@@ -19,8 +19,8 @@ namespace Prueba_net_2.Vista
 
         private void Registro_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Producto' Puede moverla o quitarla según sea necesario.
-            this.productoTableAdapter.Fill(this.dataSet1.Producto);
+            // TODO: esta línea de código carga datos en la tabla 'pizzeriaDbDataSet.Producto' Puede moverla o quitarla según sea necesario.
+            this.productoTableAdapter.Fill(this.pizzeriaDbDataSet.Producto);
 
         }
     }

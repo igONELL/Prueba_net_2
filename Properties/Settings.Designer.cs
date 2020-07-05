@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Prueba_net_2.Properties {
+namespace Prueba_net_2_.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,11 @@ namespace Prueba_net_2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\PizzaHatSpaBD" +
-            ".mdf;Integrated Security=True;Connect Timeout=30")]
-        public string PizzaHatSpaBDConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PizzeriaDb;Integrated Security" +
+            "=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string PizzeriaDbConnectionString {
             get {
-                return ((string)(this["PizzaHatSpaBDConnectionString"]));
+                return ((string)(this["PizzeriaDbConnectionString"]));
             }
         }
     }

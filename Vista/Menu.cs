@@ -24,47 +24,48 @@ namespace Prueba_net_2.Vista
         {
             AgregarPedido();
             CalcularPedido();
-            
+
         }
 
-            private void CalcularPedido()
+        private void CalcularPedido()
+        {
+
+
+            if ((checkPizzaIndividual.Checked && checkPizzaMediana.Checked)
+                || (checkPizzaIndividual.Checked && checkPizzaFamiliar.Checked)
+                || (checkPizzaMediana.Checked && checkPizzaFamiliar.Checked))
+
             {
-            
-            int calcular  = Convert.ToInt32(lblTotalAgregado.Text);
-
-                if ((checkPizzaIndividual.Checked && checkPizzaMediana.Checked)
-                    || (checkPizzaIndividual.Checked && checkPizzaFamiliar.Checked)
-                    || (checkPizzaMediana.Checked && checkPizzaFamiliar.Checked))
-
-                {
-                    MessageBox.Show("Solo debe ingresar 1 pizza");
-                }
-                else
-                {
-                    MessageBox.Show("Se ha realizado su solicitud");
-                }
-                if (checkPizzaIndividual.Checked == true)
-                {
-                    calcular = calcular + 8000;
-                }
-                if (checkPizzaMediana.Checked == true)
-                {
-                    calcular = calcular + 12000;
-                }
-                if (checkPizzaFamiliar.Checked == true)
-                {
-                    calcular = calcular + 22000;
-                }
-                if (checkBebidaIndividual.Checked == true)
-                {
-                    calcular = calcular + 1500;
-                }
-                if (checkBebidaFamiliar.Checked == true)
-                {
-                    calcular = calcular + 5000;
-                }
-                lblTotalAgregado.Text = calcular.ToString();
+                MessageBox.Show("Solo debe ingresar 1 pizza");
             }
+            else
+            {
+                MessageBox.Show("Se ha realizado su solicitud");
+            }
+            int calcular = 0;
+
+            if (checkPizzaIndividual.Checked == true)
+            {
+                calcular = calcular + 8000;
+            }
+            if (checkPizzaMediana.Checked == true)
+            {
+                calcular = calcular + 12000;
+            }
+            if (checkPizzaFamiliar.Checked == true)
+            {
+                calcular = calcular + 22000;
+            }
+            if (checkBebidaIndividual.Checked == true)
+            {
+                calcular = calcular + 1500;
+            }
+            if (checkBebidaFamiliar.Checked == true)
+            {
+                calcular = calcular + 5000;
+            }
+            lblTotalAgregado.Text = calcular.ToString();
+        }
         /* ----- Check Pizzas ----- */
         private void checkPizzaIndividual_CheckedChanged(object sender, EventArgs e)
         {
@@ -103,7 +104,6 @@ namespace Prueba_net_2.Vista
         {
 
             Registro registro = new Registro();
-            MessageBox.Show("El Total es :" + registro.SumaTotal());
             Login login = new Login();
             registro.Show();
             this.Hide();
@@ -141,17 +141,82 @@ namespace Prueba_net_2.Vista
 
         private string NombreProducto()
         {
+            if (checkPizzaIndividual.Checked == true)
+            {
+                return "Pizza individual";
+            }
+            else
+            {
+                return "0";
+            }
 
         }
 
         private int PrecioProducto()
         {
-
+            if (checkPizzaIndividual.Checked == true)
+            {
+                return 8000;
+            }
+            else
+            {
+                return 0;
+            }
+            if (checkPizzaMediana.Checked == true)
+            {
+                return 12000;
+            }
+            else
+            {
+                return 0;
+            }
+            if (checkPizzaFamiliar.Checked == true)
+            {
+                return 22000;
+            }
+            else
+            {
+                return 0;
+            }
         }
         private int CantidadProducto()
+        {
+            if (((checkPizzaIndividual.Checked == true) && (checkBebidaIndividual.Checked == true)
+                && (checkPizzaFamiliar.Checked == true)) || ((checkPizzaMediana.Checked == true)
+                && (checkBebidaIndividual.Checked == true) && (checkPizzaFamiliar.Checked == true)) ||
+                ((checkPizzaFamiliar.Checked == true) && (checkBebidaIndividual.Checked == true)
+                && (checkPizzaFamiliar.Checked == true)))
             {
-
+                return 3;
             }
+            else
+            {
+                return 0;
+            }
+            if (((checkPizzaIndividual.Checked == true) && (checkBebidaIndividual.Checked == true))
+                || ((checkPizzaMediana.Checked == true) && (checkBebidaIndividual.Checked == true))
+                || ((checkPizzaFamiliar.Checked == true) && (checkBebidaIndividual.Checked == true))
+                || ((checkPizzaIndividual.Checked == true) && (checkBebidaFamiliar.Checked == true))
+                || ((checkPizzaMediana.Checked == true) && (checkBebidaFamiliar.Checked == true))
+                || ((checkPizzaFamiliar.Checked == true) && (checkBebidaFamiliar.Checked == true)))
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
+            if ((checkPizzaIndividual.Checked == true) || (checkPizzaMediana.Checked == true) 
+                || ((checkPizzaFamiliar.Checked == true) || (checkBebidaIndividual.Checked == true))
+                || (checkBebidaFamiliar.Checked == true))
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        } 
 
         private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -160,4 +225,4 @@ namespace Prueba_net_2.Vista
         }
     }
     }
-} 
+ 

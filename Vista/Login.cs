@@ -44,7 +44,7 @@ namespace Prueba_net_2.Vista
             
             if (txtUsuario.Text == user && txtContrasena.Text == pass)
             {
-                MessageBox.Show("Bienvenido" + " " + user);
+                MessageBox.Show("Bienvenido");
                 Vista.Menu mainMenu = new Vista.Menu();
                 mainMenu.Show();
                 this.Hide();

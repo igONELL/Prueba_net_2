@@ -59,7 +59,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(668, 530);
+            this.dataGridView1.Size = new System.Drawing.Size(766, 530);
             this.dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn

@@ -41,10 +41,11 @@
             this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblTotalPedido = new System.Windows.Forms.Label();
+            this.lblTotalAgregado = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.regToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@
             this.checkPizzaIndividual.Text = "Individual $8.000";
             this.checkPizzaIndividual.UseVisualStyleBackColor = true;
             this.checkPizzaIndividual.CheckedChanged += new System.EventHandler(this.checkPizzaIndividual_CheckedChanged);
+            this.checkPizzaIndividual.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // checkPizzaMediana
             // 
@@ -78,6 +80,7 @@
             this.checkPizzaMediana.Text = "Mediana $12.000";
             this.checkPizzaMediana.UseVisualStyleBackColor = true;
             this.checkPizzaMediana.CheckedChanged += new System.EventHandler(this.checkPizzaMediana_CheckedChanged);
+            this.checkPizzaMediana.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // checkPizzaFamiliar
             // 
@@ -89,6 +92,7 @@
             this.checkPizzaFamiliar.Text = "Familiar $ 22.000";
             this.checkPizzaFamiliar.UseVisualStyleBackColor = true;
             this.checkPizzaFamiliar.CheckedChanged += new System.EventHandler(this.checkPizzaFamiliar_CheckedChanged);
+            this.checkPizzaFamiliar.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // label2
             // 
@@ -136,6 +140,7 @@
             this.checkBebidaIndividual.Text = "Individual $1.500";
             this.checkBebidaIndividual.UseVisualStyleBackColor = true;
             this.checkBebidaIndividual.CheckedChanged += new System.EventHandler(this.checkBebidaIndividual_CheckedChanged);
+            this.checkBebidaIndividual.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // checkBebidaFamiliar
             // 
@@ -147,6 +152,7 @@
             this.checkBebidaFamiliar.Text = "Familiar $5.000";
             this.checkBebidaFamiliar.UseVisualStyleBackColor = true;
             this.checkBebidaFamiliar.CheckedChanged += new System.EventHandler(this.checkBebidaFamiliar_CheckedChanged);
+            this.checkBebidaFamiliar.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // btnAgregarPedido
             // 
@@ -176,14 +182,16 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Total :";
             // 
-            // lblTotalPedido
+            // lblTotalAgregado
             // 
-            this.lblTotalPedido.AutoSize = true;
-            this.lblTotalPedido.Location = new System.Drawing.Point(236, 652);
-            this.lblTotalPedido.Name = "lblTotalPedido";
-            this.lblTotalPedido.Size = new System.Drawing.Size(18, 20);
-            this.lblTotalPedido.TabIndex = 13;
-            this.lblTotalPedido.Text = "0";
+            this.lblTotalAgregado.AutoSize = true;
+            this.lblTotalAgregado.Location = new System.Drawing.Point(236, 654);
+            this.lblTotalAgregado.Name = "lblTotalAgregado";
+            this.lblTotalAgregado.Size = new System.Drawing.Size(31, 20);
+            this.lblTotalAgregado.TabIndex = 13;
+            this.lblTotalAgregado.Text = "$ 0";
+            this.lblTotalAgregado.TextChanged += new System.EventHandler(this.btnAgregarPedido_Click);
+            this.lblTotalAgregado.Click += new System.EventHandler(this.btnAgregarPedido_Click);
             // 
             // menuStrip1
             // 
@@ -200,7 +208,8 @@
             // regToolStripMenuItem
             // 
             this.regToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroToolStripMenuItem});
+            this.registroToolStripMenuItem,
+            this.registroToolStripMenuItem1});
             this.regToolStripMenuItem.Name = "regToolStripMenuItem";
             this.regToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
             this.regToolStripMenuItem.Text = "Opciones";
@@ -208,16 +217,21 @@
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(179, 34);
-            this.registroToolStripMenuItem.Text = "Registro";
-            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(102, 34);
+            // 
+            // registroToolStripMenuItem1
+            // 
+            this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
+            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.registroToolStripMenuItem1.Text = "Registro";
+            this.registroToolStripMenuItem1.Click += new System.EventHandler(this.registroToolStripMenuItem1_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 712);
-            this.Controls.Add(this.lblTotalPedido);
+            this.Controls.Add(this.lblTotalAgregado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCerrarCaja);
             this.Controls.Add(this.btnAgregarPedido);
@@ -257,9 +271,10 @@
         private System.Windows.Forms.Button btnAgregarPedido;
         private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTotalPedido;
+        private System.Windows.Forms.Label lblTotalAgregado;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem regToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem1;
     }
 }

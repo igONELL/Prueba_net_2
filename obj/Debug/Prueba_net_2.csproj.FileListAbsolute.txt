@@ -1,0 +1,17 @@
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2.csprojAssemblyReference.cache
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2_.Properties.Resources.resources
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2.Vista.Login.resources
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2.Vista.Menu.resources
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2_.Vista.Registro.resources
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2.csproj.GenerateResource.cache
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2.csproj.CoreCompileInputs.cache
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2_.exe
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2_.pdb
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\Prueba_net_2_.exe.config
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\Prueba_net_2_.exe
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\Prueba_net_2_.pdb
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\EntityFramework.dll
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\EntityFramework.xml
+C:\Users\Igor\source\repos\Prueba_net_2-master\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Igor\source\repos\Prueba_net_2-master\obj\Debug\Prueba_net_2.csproj.CopyComplete

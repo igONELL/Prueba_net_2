@@ -114,6 +114,13 @@ namespace Prueba_net_2.Vista
 
         private void AgregarPedido()
         {
+            if (((checkPizzaIndividual.Checked && checkPizzaMediana.Checked)
+                || (checkPizzaIndividual.Checked && checkPizzaFamiliar.Checked)
+                || (checkPizzaMediana.Checked && checkPizzaFamiliar.Checked)))
+            {
+
+            }
+            else { 
             using (Prueba_net_2_.Modelo.PizzeriaDbEntities bd = new Prueba_net_2_.Modelo.PizzeriaDbEntities())
             {
                 Producto producto = new Producto();
@@ -125,6 +132,7 @@ namespace Prueba_net_2.Vista
 
                 bd.Producto.Add(producto);
                 bd.SaveChanges();
+                }
 
             }
 
@@ -145,11 +153,27 @@ namespace Prueba_net_2.Vista
             {
                 return "Pizza individual";
             }
+            
+            else if ( checkPizzaMediana.Checked == true)
+            {
+                return "Pizza mediana";
+            }
+            else if (checkPizzaFamiliar.Checked == true)
+            {
+                return "Pizza familiar";
+            }
+            else if (checkBebidaIndividual.Checked == true)
+            {
+                return "Bebida Individual";
+            }
+            else if (checkBebidaFamiliar.Checked == true)
+            {
+                return "Bebida familiar";
+            }
             else
             {
-                return "0";
+               return "0";
             }
-
         }
 
         private int PrecioProducto()
@@ -158,19 +182,11 @@ namespace Prueba_net_2.Vista
             {
                 return 8000;
             }
-            else
-            {
-                return 0;
-            }
-            if (checkPizzaMediana.Checked == true)
+            else if (checkPizzaMediana.Checked == true)
             {
                 return 12000;
             }
-            else
-            {
-                return 0;
-            }
-            if (checkPizzaFamiliar.Checked == true)
+            else if (checkPizzaFamiliar.Checked == true)
             {
                 return 22000;
             }
@@ -189,11 +205,8 @@ namespace Prueba_net_2.Vista
             {
                 return 3;
             }
-            else
-            {
-                return 0;
-            }
-            if (((checkPizzaIndividual.Checked == true) && (checkBebidaIndividual.Checked == true))
+
+            else if (((checkPizzaIndividual.Checked == true) && (checkBebidaIndividual.Checked == true))
                 || ((checkPizzaMediana.Checked == true) && (checkBebidaIndividual.Checked == true))
                 || ((checkPizzaFamiliar.Checked == true) && (checkBebidaIndividual.Checked == true))
                 || ((checkPizzaIndividual.Checked == true) && (checkBebidaFamiliar.Checked == true))
@@ -202,11 +215,7 @@ namespace Prueba_net_2.Vista
             {
                 return 2;
             }
-            else
-            {
-                return 0;
-            }
-            if ((checkPizzaIndividual.Checked == true) || (checkPizzaMediana.Checked == true) 
+            else if ((checkPizzaIndividual.Checked == true) || (checkPizzaMediana.Checked == true) 
                 || ((checkPizzaFamiliar.Checked == true) || (checkBebidaIndividual.Checked == true))
                 || (checkBebidaFamiliar.Checked == true))
             {
